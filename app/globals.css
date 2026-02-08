@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Estilos para o preview do Markdown */
+.markdown-preview {
+  @apply prose prose-slate dark:prose-invert max-w-none;
+}
+
+.markdown-preview h1 {
+  @apply text-3xl font-bold mb-4 mt-6;
+}
+
+.markdown-preview h2 {
+  @apply text-2xl font-bold mb-3 mt-5;
+}
+
+.markdown-preview h3 {
+  @apply text-xl font-bold mb-2 mt-4;
+}
+
+.markdown-preview p {
+  @apply mb-4;
+}
+
+.markdown-preview ul, .markdown-preview ol {
+  @apply mb-4 ml-6;
+}
+
+.markdown-preview li {
+  @apply mb-1;
+}
+
+.markdown-preview code {
+  @apply bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm;
+}
+
+.markdown-preview pre {
+  @apply bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-4 overflow-x-auto;
+}
+
+.markdown-preview pre code {
+  @apply bg-transparent p-0;
+}
+
+.markdown-preview blockquote {
+  @apply border-l-4 border-gray-300 dark:border-gray-700 pl-4 italic mb-4;
+}
+
+.markdown-preview a {
+  @apply text-blue-600 dark:text-blue-400 hover:underline;
+}
